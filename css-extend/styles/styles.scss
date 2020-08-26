@@ -1,0 +1,20 @@
+main {
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid black;
+}
+
+.parent {
+
+    &__first-child {
+        @extend .parent;
+    }
+
+    &__second-child {
+        @extend .parent__first-child;
+    }
+
+    &__third-child {
+        @extend .parent__second-child;
+    }
+}

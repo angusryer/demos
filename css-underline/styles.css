@@ -1,0 +1,37 @@
+.nav { /* this is an unordered list (whicb is just a container for list items) */
+    width: 75%;
+    height: 4rem;
+    border-radius: 0.5rem;
+    background-color: rgba(200, 200, 200, 0.5);
+    padding-inline-start: 0; /* this is to reset the default padding */
+
+    /* this controls the position and spacing of the UL's children, which are each of the ./nav__item <li> tags */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav__item { /* this is a single <li> tag--NOT a link, just the list item */
+    box-sizing: border-box; /* this will remove the need to manually calculate the the height of this <li> minus the 4px border */
+    list-style: none; /* removes the bullet points */
+    height: 100%; /* makes the <li> the same height as its parent container */
+    width: 8rem; /* just making the width consistent instead of being dependent on the contents (words) */
+
+    /* this controls the position and spacing of the LI's children, which are each of the ./nav__link <a> tags */
+    display: inherit; /* inherit's 'flex' from the parent */
+    align-items: inherit;  /* inherit's 'center' from its parent */
+    justify-content: center;
+}
+
+.nav__item--active {
+    border-bottom: 4px solid palevioletred;
+}
+
+.nav__item--active > a {
+    transform: translateY(2px); /* this moves the actual <a> tag text down b/c it gets pushed up from the border (b/c we have box-sizing: border-box set) */
+}
+
+.nav__link {
+    color: brown;
+    text-decoration-line: none;
+}

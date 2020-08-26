@@ -1,0 +1,30 @@
+.cards  { /* this is the main container (a <section> tag, but could be <div>, <main>, <header>, <nav>, <article> etc...) */
+    background-color: lightgray;
+    border-radius: 0.5rem;
+    height: 98vh; /* this MUST be set to either a relative value of an absolutely-sized parent,
+                     OR it must be set to an absolute size itself,
+                     This is b/c block elements have 0 height by default */
+
+    /* this is what control the alignment and spacing of .cards__item--but NOT .cards__text */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cards__item { /* this is one individual "card" (a <div> tag) */
+    width:  15rem; /* pay special attention to the sizing of cards--they should NOT fluctuate as easily as other */
+    height: 22rem; /* types of components.  Consider setting a min- and max-width and -height to them. */
+    border: 1px solid lightslategray;
+    border-radius: 0.5rem;
+    background-color: lightsteelblue;
+
+    /* this is what controls the alignment of .cards__text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards__text { /* this is the text inside of the "card" (a <span> tag, but could be anything) */
+    /* no styling needed for positioning purposes*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

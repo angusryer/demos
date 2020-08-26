@@ -1,0 +1,25 @@
+{
+    "title": "Learn Redux",
+    "description": "A small app to help learn redux from scratch",
+    "author": "Angus Ryer",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "webpack-dev-server --open --mode development",
+        "build-dev": "webpack -d --mode development"
+    },
+    "dependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-redux": "^7.2.1",
+        "redux": "^4.0.5"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.1",
+        "@babel/preset-env": "^7.11.0",
+        "@babel/preset-react": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
+    }
+}
