@@ -1,0 +1,91 @@
+$primary: royalblue;
+
+// Morning Challenge Solution Code
+// ===============================
+
+// Declare your font-faces above where you use them
+
+@font-face {
+  font-family: "Aleo";
+  src: url("./fonts/Aleo/Aleo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ZCOOL";
+  src: url("./fonts/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("./fonts/VT323-Regular.ttf") format("truetype");
+}
+
+// Changed the ".custom" font to "Batik" to demonstrate using an OpenType font
+// Check out https://css-tricks.com/snippets/css/using-font-face/ for more information
+@font-face {
+  font-family: "Batik";
+  src: url("./fonts/batik-worldwide-personal-use.regular.otf") format("opentype")
+}
+
+// ===============================
+
+
+@mixin underlined-span {
+  text-decoration: underline;
+  color: $primary;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  h1 {
+    font-size: 3rem;
+    border-bottom: 2px solid salmon;
+  }
+}
+
+.header, .custom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0;
+  span {
+    @include underlined-span();
+  }
+}
+
+
+// Morning Challenge Solution Code
+// ===============================
+
+.header__one {
+  font-family: "Aleo";
+}
+
+.header__three {
+  font-family: "Roboto";
+}
+
+.header__two {
+  font-family: "ZCOOL";
+}
+
+.custom {
+  font-family: "Batik";
+}
+
+// ===============================
