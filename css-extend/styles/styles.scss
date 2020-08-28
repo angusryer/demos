@@ -2,19 +2,29 @@ main {
     padding: 1rem;
     margin: 1rem;
     border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.virtual__text-style {
+    font-family: Impact;
+    font-size: 2rem;
+    color: cadetblue;
 }
 
 .parent {
 
     &__first-child {
-        @extend .parent;
+        @extend .virtual__text-style;
     }
 
     &__second-child {
         @extend .parent__first-child;
+        font-family: sans-serif;
     }
 
     &__third-child {
         @extend .parent__second-child;
+        color: brown;
     }
 }
