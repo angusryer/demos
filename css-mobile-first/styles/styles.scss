@@ -1,0 +1,106 @@
+/* change to scss, apply font-face, and write your mixins/rulesets! */
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Light.ttf") format("truetype");
+}
+
+$content-bg: rgb(216, 184, 184);
+$footer-bg: rgb(15, 45, 54);
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem; 
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__links {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      list-style-type: none;
+    }
+  }
+
+  &__hamburger {
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  height: 20rem;
+  background-image: url("../img/hero.jpg");
+  background-position: center;
+  background-size: cover;
+
+  &__heading {
+    color: white;
+    margin-left: 10vw;
+
+    @include desktop {
+      font-size: 3rem;
+    }
+  }
+}
+
+.feature {
+  background-color: $content-bg;
+  padding: 2rem;
+  
+  @include desktop {
+    display: flex;
+  }
+
+  &__content:nth-child(2) {
+    margin: 5rem 0;
+
+    @include desktop {
+      margin: 0 2rem;
+    }
+  }
+
+  &__paragraph {
+    font-family: sans-serif;
+  }
+}
+
+.footer {
+  height: 5rem;
+  background-color: $footer-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text {
+    color: white;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Quicksand";
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+li {
+  padding-left: 1rem;
+}

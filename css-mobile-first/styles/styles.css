@@ -1,0 +1,117 @@
+/* change to scss, apply font-face, and write your mixins/rulesets! */
+@font-face {
+  font-family: "Quicksand";
+  src: url("../fonts/Quicksand-Light.ttf") format("truetype");
+}
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 3rem;
+}
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__links {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .header__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 20rem;
+  background-image: url("../img/hero.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.hero__heading {
+  color: white;
+  margin-left: 10vw;
+}
+@media screen and (min-width: 1200px) {
+  .hero__heading {
+    font-size: 3rem;
+  }
+}
+
+.feature {
+  background-color: #d8b8b8;
+  padding: 2rem;
+}
+@media screen and (min-width: 1200px) {
+  .feature {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.feature__content:nth-child(2) {
+  margin: 5rem 0;
+}
+@media screen and (min-width: 1200px) {
+  .feature__content:nth-child(2) {
+    margin: 0 2rem;
+  }
+}
+.feature__paragraph {
+  font-family: sans-serif;
+}
+
+.footer {
+  height: 5rem;
+  background-color: #0f2d36;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.footer__text {
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: "Quicksand";
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+li {
+  padding-left: 1rem;
+}
+/*# sourceMappingURL=styles.css.map */
