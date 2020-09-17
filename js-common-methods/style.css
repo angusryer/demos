@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+}
+
+body {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+#app {
+  height: 200px;
+  width: 200px;
+}

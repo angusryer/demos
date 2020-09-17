@@ -1,0 +1,7 @@
+.dogs-container {
+  display: flex;
+  flex-direction: column;
+}
+.dog-img {
+  width: 500px;
+}

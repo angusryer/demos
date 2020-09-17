@@ -1,0 +1,78 @@
+$brainstation-blue: rgb(51, 170, 255);
+
+/* Box-sizing border-box */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	padding: 10px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	background: #999999;
+	border-bottom: solid 1px;
+	z-index: 10;
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+
+		&--left {
+			padding-left: 20px;
+			align-self: left;
+		}
+		
+		&--right {
+			padding-right: 20px;
+			align-self: right;
+		}
+	}
+}
+
+.card-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	padding: 35px;
+}
+
+.card {
+	width: 150px;
+	height: 200px;
+	margin: 10px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background: #eeeeee;
+	box-shadow: 3px 3px 3px #aaaaaa;
+	border-radius: 5px;
+	flex-wrap: wrap;
+
+	&__content {
+		flex: 0 0 100%;
+		justify-self: center;
+		text-align: center;
+	}
+	
+	&__title {
+		flex: 0 0 100%;
+		text-align: center;
+		border-top: dashed 1px #555555;
+		padding-top: 15px;
+	}
+
+}

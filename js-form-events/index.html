@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <h2 class="nav__logo">POSTE-GARDE</h2>
+    </nav>
+    <main class="main">
+        <section class="main__content">
+            <h1 class="main__content-title">Please Post!</h1>
+            <form class="main__content-form">
+                <div class="main__content-form-input-group">
+                    <label for="name-input" class="main__content-form-name-label">What's your name?</label>
+                    <input type="text" name="name-input" id="name-input" class="main__content-form-name" />
+                    <label for="comment-input" class="main__form-comment-label">Post your comment.</label>
+                    <input type="text" name="comment-input" id="comment-input" class="main__content-form-comment" />
+                </div>
+                <button class="main__content-form-submit">POST COMMENT</button>
+            </form>
+        </section>
+        <section class="main__comments"></section>
+    </main>
+    <footer class="footer">
+        <span class="footer__logo">POST-GARDE</span>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

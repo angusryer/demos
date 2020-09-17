@@ -1,0 +1,14 @@
+.App {
+  padding: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+form {
+  margin: 5px;
+}
+
+form > input {
+  margin-right: 5px;
+}
