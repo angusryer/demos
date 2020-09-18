@@ -1,5 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TheParent from "./TheParent";
+import Parent from "./Parent";
 
-ReactDOM.render(<TheParent />, document.getElementById("root"));
+// Import the main component (<App /> in most cases, but in this case I just called it <Parent />)
+
+ReactDOM.render(<Parent />, document.getElementById("root"));
+
+// index.js is, by convention, used as the de-facto entry point for MOST systems, such as React.
