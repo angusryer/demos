@@ -1,0 +1,45 @@
+.app {
+  text-align: center;
+}
+
+.app__loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trending {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.trending__image {
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px #777;
+}
+
+.trending__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image__container {
+  margin: 25px;
+}
+
+.image__img {
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px #777;
+}
+
+.image__home {
+  text-transform: uppercase;
+}
+
+.image__link-container {
+  margin: 25px;
+}
