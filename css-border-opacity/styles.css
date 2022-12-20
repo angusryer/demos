@@ -2,9 +2,11 @@
   /* this is the main container (a <section> tag, but could be <div>, <main>, <header>, <nav>, <article> etc...) */
   background-color: lightgray;
   border-radius: 0.5rem;
-  height: 98vh; /* this MUST be set to either a relative value of an absolutely-sized parent,
-                     OR it must be set to an absolute size itself,
-                     This is b/c block elements have 0 height by default */
+  /* this MUST be set to either a relative value of an absolutely-sized parent,
+  * OR it must be set to an absolute size itself,
+  * This is b/c block elements have 0 height by default
+  */
+  height: 98vh; 
 
   /* this is what control the alignment and spacing of .cards__item--but NOT .cards__text */
   display: flex;
@@ -18,7 +20,6 @@
   height: 22rem; /* types of components.  Consider setting a min- and max-width and -height to them. */
   border: 20px solid rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
-
 
   background-origin: border-box;
   background-position: center;

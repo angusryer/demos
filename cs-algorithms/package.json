@@ -1,0 +1,28 @@
+{
+  "name": "cs-algorithms",
+  "version": "1.0.0",
+  "description": "Various CS algorithms written in JS and TS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angusryer/demos.git"
+  },
+  "keywords": [
+    "cs"
+  ],
+  "author": "Angus Ryer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angusryer/demos/issues"
+  },
+  "homepage": "https://github.com/angusryer/demos#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
