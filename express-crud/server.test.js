@@ -1,15 +1,10 @@
 const express = require('express');
-
 const app = express();
-const api = require('supertest');
-const testApi = api(app);
 // Invoke the first method in the express package (ie, the file containing the express
 // functions), and assign its return to the "app" variable. It needs to be invoked
 // because invocation causes functions and classes to receive a context (think of "this")
 // In this case, we want the context of the server code we're writing to be available
 // to the handy internals of express.
-
-const API = 'http://localhost:8085'
 
 /**
  * Returns middleware that only parses urlencoded bodies and only looks at requests
@@ -53,22 +48,69 @@ app.put('/holidays', (req, res) => {
 })
 
 app.delete('/holidays', (req, res) => {
+  if (Object.keys(req.body).every(v => v !== "id")) {
+    return res.status(400).send("Invalid parameter format. Must include 'id' parameter in request body.")  
+  }
 
+  let index = events.indexOf(ev => ev.id === req.body.id);
+  if (index != -1) {
+      events.splice(index, 1)
+      return res.status(200).send(events)
+  } else {
+      return res.status(404).send("ID not found. ID: " + req.body.id)
+  }
 })
 
-app.listen(8085, () => console.log('Running on port 8085'))
+if (process.env.ENV !== "test") {
+  app.listen(8085, () => console.log('Running on port 8085'))
+}
 
 
-test('GET should return an array of holidays', () => {
-    testApi.get(API + "/holidays").end((err, res) => {
-        expect(res.body).toEqual(events)
-    })
+
+/**
+ * Tests
+ */
+
+const testApi = require('supertest').agent(app)
+
+const ENDPOINT = "/holidays"
+
+describe("/holidays", () => {
+  
+  it('GET should return an array of holidays', async () => {
+    const res = await testApi.get(ENDPOINT)
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual(events);
+  })
+  
+  it('POST should be successful when provided with data of type { event: string }', async () => {
+    const res = await testApi.post(ENDPOINT).send({ event: "big event" })
+    expect(res.status).toBe(200)
+  })
+
+  it('POST should return with 400 when "event" param not provided', async () => {
+    const res = await testApi.post(ENDPOINT).send({ random: "data" })
+    expect(res.status).toBe(400)
+  })
+  
+  it('PUT should return with 400 when "event" and "id" params not provided', async () => {
+    const res = await testApi.post(ENDPOINT).send({ random: "data" })
+    expect(res.status).toBe(400)
+  })
+  
+  it('PUT should return with 404 when "id" param is not found', async () => {
+    const res = await testApi.put(ENDPOINT).send({ id: "5" })
+    expect(res.status).toBe(404);
+  })
+  
+  it('DELETE should fail with 404 when "id" param is not found', async () => {
+    const res = await testApi.delete(ENDPOINT).send({ id: "5" })
+    expect(res.status).toBe(404);
+  })
+
+  it('DELETE should return with 400 when "id" param not provided', async () => {
+    const res = await testApi.delete(ENDPOINT).send({ random: "data" })
+    expect(res.status).toBe(400)
+  })
+
 })
-
-test('POST should return with 400 when "event" param not provided', () => {})
-
-test('PUT should return with 400 when "event" and "id" params not provided', () => {})
-
-test('PUT should return with 404 when "id" param is not found', () => {})
-
-test('DELETE should fail with 400 when "id" param in not found', () => {})
