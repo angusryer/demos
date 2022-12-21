@@ -2,16 +2,20 @@
   "name": "express-crud-classes",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.test.ts",
   "scripts": {
-    "test": "ENV=test jest"
+    "test": "ENV=test jest",
+    "start": "ts-node index.ts"
   },
-  "author": "Angus",
+  "author": "Angus Ryer",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^29.2.4",
+    "@jest/globals": "^29.3.1",
+    "@types/express": "^4.17.15",
+    "@types/supertest": "^2.0.12",
     "jest": "^29.3.1",
     "supertest": "^6.3.3",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.9.4"
   },
   "dependencies": {
